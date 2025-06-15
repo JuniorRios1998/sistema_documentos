@@ -1,0 +1,97 @@
+/* Variables CSS para una gestión más sencilla de colores */
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro para el fondo del sidebar */
+    --secondary-color: #34495e; /* Un tono ligeramente más claro para elementos activos/hover */
+    --text-color-light: #ecf0f1; /* Gris claro para el texto general */
+    --text-color-dark: #2c3e50; /* Azul oscuro para títulos en contenido principal */
+    --accent-color: #3498db; /* Azul vibrante para resaltar elementos interactivos */
+    --border-color: #3f5872; /* Color de borde para separar secciones */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Fondo general más suave */
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos en el sidebar */
+}
+
+.sidebar-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color); /* Separador visual */
+    width: 90%;
+    color: var(--accent-color); /* Resaltar el título */
+}
+
+.nav {
+    width: 100%;
+    padding: 0;
+    list-style: none; /* Eliminar los puntos de lista */
+}
+
+.nav-item {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+}
+
+.nav-link {
+    display: flex; /* Para alinear ícono y texto */
+    align-items: center;
+    padding: 12px 25px;
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    border-left: 5px solid var(--accent-color); /* Borde lateral para el activo/hover */
+    padding-left: 20px; /* Ajustar padding por el borde */
+}
+
+.nav-link i { /* Estilo para los iconos de Bootstrap */
+    margin-right: 12px;
+    font-size: 1.3em;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #fdfdfd; /* Fondo del contenido principal */
+}
+
+/* Estilos para el logout, un poco diferente */
+.nav-link[href="../includes/logout.php"] {
+    margin-top: auto; /* Empuja el botón de cerrar sesión hacia abajo */
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    color: #e74c3c; /* Color de advertencia para cerrar sesión */
+}
+
+.nav-link[href="../includes/logout.php"]:hover {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    border-left: 5px solid #e74c3c;
+}
